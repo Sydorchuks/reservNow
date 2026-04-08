@@ -1,3 +1,10 @@
 {
-    "Contact": "Contact"
+  "hero": {
+    "title": "is an online booking platform that optimizes and simplifies the process of renting your sports objects",
+    "description": "Discover the best platform for booking sports venues! Whether your tenants plan a game, tournament, or training session, our user-friendly platform will simplify the rental process. With ReserveNow, you'll be able to customize and optimize your work, and your clients will have access to a wide range of facilities, checking of availability, and booking in minutes. Improve your experience with us today!"
+  },
+  "buttons": {
+    "contact": "Contact us",
+    "howItWorks": "How ReservNow works"
+  }
 }

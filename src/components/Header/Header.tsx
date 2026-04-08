@@ -22,7 +22,8 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <img src="/logo.png" alt="ReservNow" className="header-logo" />
+        <img src="/logo.png" alt="ReservNow" className="header-logo-desktop" />
+        <img src="/logo-mobile.png" alt="RN" className="header-logo-mobile" />
 
         <div className="header-actions">
             <div ref={langRef} className={`lang ${open ? "open" : ""}`}>
@@ -47,7 +48,7 @@ export default function Header() {
             </div>
 
           <button className="header-btn">
-            {t("Contact")}
+            {t("buttons.contact")}
           </button>
         </div>
       </div>
