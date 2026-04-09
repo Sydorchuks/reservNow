@@ -1,0 +1,283 @@
+.features { 
+  width: 100%;
+  padding:0;
+  overflow: hidden;
+}
+
+.features-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 120px;
+}
+
+.features-visual {
+  position: relative;
+  flex: 0.8;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  overflow: visible;
+}
+
+.features-bg {
+  position: absolute;
+
+  width: 450px;
+  height: 250px;
+  top:60px;
+  left: -20px;
+  transform: translateY(-50%);
+
+  z-index: 1;
+}
+
+.features-main {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  padding-left: 50px;
+
+  transform: scale(1.35);
+
+  z-index: 2;
+}
+
+.features-content {
+  flex: 1.5;
+  max-width: 750px;
+  margin-bottom: 90px;
+}
+
+.features-title {
+  padding-top: 20px;
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 32px;
+  font-weight: 600;
+}
+
+.highlight {
+  color: #7961DB;
+}
+
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.feature-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f5f3ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.feature-icon {
+  padding-top: 9px;
+  margin-right: 10px;
+  width: 28px;
+  height: 28px;
+  transform: scale(7);
+}
+
+.feature-heading {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.feature-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+}
+
+
+@media (max-width: 1200px) {
+  .features-container {
+    padding: 0 80px;
+    gap: 80px;
+  }
+
+  .features-bg {
+    width: 600px;
+    height: 600px;
+    left: -80px;
+  }
+
+  .features-main {
+    max-width: 700px;
+  }
+
+  .features-title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 1024px) {
+  .features {
+    padding: 0;
+    margin-top: -40px;
+    overflow: visible;
+  }
+
+  .features-container {
+    flex-direction: column;
+    padding: 0 40px;
+    gap: 40px;
+  }
+
+  .features-visual {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .features-bg {
+    position: absolute;
+
+    width: 670px;
+    height: 400px;
+    top:150px;
+    left: 80px;
+
+    z-index: 1;
+  }
+
+  .features-main {
+    position: relative;
+
+    width: 95%;
+    max-width: 700px;
+
+    transform: scale(1.1);
+
+    z-index: 2;
+  }
+
+  .features-content {
+    max-width: 700px;
+    text-align: center;
+  }
+
+  .features-title {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .feature-heading {
+    font-size: 18px;
+  }
+
+  .feature-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .features {
+    padding-top: 30px;
+    padding-left: 0;
+  }
+
+  .features-container {
+    padding: 0 20px;
+  }
+
+  .features-visual {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    transform: scale(1.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -20px;
+  }
+
+  .features-bg {
+    position: absolute;
+
+    width: 90%;
+    height: 140px;
+    top:60px;
+    left: 10px;
+
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .features-main {
+    position: relative;
+
+    width: 95%;
+    max-width: 420px;
+
+    transform: scale(1.05);
+
+    z-index: 2;
+  }
+
+  .features-content {
+    text-align: left;
+    margin-bottom: 20px;;
+  }
+
+  .features-title {
+    font-size: 24px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .feature-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .feature-icon {
+    padding-top: 6.5px;
+    width: 22px;
+    height: 22px;
+    transform: scale(7);
+  }
+
+  .feature-heading {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .feature-text {
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: left;
+  }
+}

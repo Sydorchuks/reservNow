@@ -6,5 +6,51 @@
   "buttons": {
     "contact": "Contact us",
     "howItWorks": "How ReservNow works"
+  },
+  "features": {
+    "titleHighlight": "The platform",
+    "title": "allows you to easily adapt to different types of objects and customise it for yourself",
+    "items": [
+      {
+        "title": "Reporting system",
+        "description": "ReserveNow Reports functionality serve as a crucial tool for property management. Reports helps you stay informed about their properties' performance."
+      },
+      {
+        "title": "Multifunctional schedule",
+        "description": "Our multifunctional scheduling tool allows you to quickly and easily analyze the occupancy of your facilities, plan future rentals, and provide your clients with comprehensive information."
+      }
+    ]
+  },
+  "cta": {
+    "title": "ReservNow simplifies the reservation process, which will positively affect your business",
+    "button": "How ReservNow works"
+  },
+  "contact": {
+    "title": "Contact form",
+    "form": {
+      "name": "Name*",
+      "email": "Email*",
+      "phone": "Phone number*",
+      "message": "Message*",
+      "submit": "Send"
+    },
+    "errors": {
+      "nameRequired": "Enter your name",
+      "emailRequired": "Enter email",
+      "emailInvalid": "Invalid email",
+      "phoneRequired": "Enter phone number",
+      "phoneInvalid": "Minimum 9 digits",
+      "messageRequired": "Enter message"
+    }
+  },
+  "modal": {
+    "success": {
+      "title": "Thank you",
+      "text": "We have received your request and will contact you soon."
+    },
+    "error": {
+      "title": "The form submission failed",
+      "text": "Please try to submit your request again."
+    }
   }
 }
