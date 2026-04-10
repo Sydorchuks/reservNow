@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
-import "./header.css"
+import "./Header.css"
 import { useClickOutside } from "../../hooks/useClickOutside"
 
 export default function Header() {
