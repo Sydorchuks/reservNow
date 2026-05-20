@@ -37,6 +37,8 @@ export default function ContactForm({
 
   const [errors, setErrors] = useState<FormErrors>({})
 
+  const hasErrors = Object.keys(errors).length > 0
+
   const validate = () => {
     const newErrors: FormErrors = {}
 
@@ -71,8 +73,14 @@ export default function ContactForm({
     }, 500)
   }
 
-  const handleChange = (field: keyof FormData, value: string) => {
-    setData((prev) => ({ ...prev, [field]: value }))
+  const handleChange = (
+    field: keyof FormData,
+    value: string
+  ) => {
+    setData((prev) => ({
+      ...prev,
+      [field]: value,
+    }))
 
     setErrors((prev) => {
       const copy = { ...prev }
@@ -82,9 +90,10 @@ export default function ContactForm({
   }
 
   return (
-    <div className="form">
+    <div className={`form ${hasErrors ? "has-errors" : ""}`}>
       <Input
         label={t("contact.form.name")}
+        placeholder={t("contact.placeholders.name")}
         value={data.name}
         error={errors.name}
         onChange={(v) => handleChange("name", v)}
@@ -92,6 +101,7 @@ export default function ContactForm({
 
       <Input
         label={t("contact.form.email")}
+        placeholder={t("contact.placeholders.email")}
         value={data.email}
         error={errors.email}
         onChange={(v) => handleChange("email", v)}
@@ -99,6 +109,7 @@ export default function ContactForm({
 
       <Input
         label={t("contact.form.phone")}
+        placeholder={t("contact.placeholders.phone")}
         value={data.phone}
         error={errors.phone}
         onChange={(v) => handleChange("phone", v)}
@@ -106,12 +117,16 @@ export default function ContactForm({
 
       <Textarea
         label={t("contact.form.message")}
+        placeholder={t("contact.placeholders.message")}
         value={data.message}
         error={errors.message}
         onChange={(v) => handleChange("message", v)}
       />
 
-      <button className="submit-btn" onClick={handleSubmit}>
+      <button
+        className="submit-btn"
+        onClick={handleSubmit}
+      >
         {t("contact.form.submit")}
       </button>
     </div>
@@ -120,45 +135,78 @@ export default function ContactForm({
 
 type InputProps = {
   label: string
+  placeholder: string
   value: string
   error?: string
   onChange: (value: string) => void
 }
 
-function Input({ label, value, onChange, error }: InputProps) {
+function Input({
+  label,
+  placeholder,
+  value,
+  onChange,
+  error,
+}: InputProps) {
   return (
     <div className="field">
       <div className="field-header">
         <label>{label}</label>
-        {error && <span className="error-text desktop">{error}</span>}
+
+        {error && (
+          <span className="error-text desktop">
+            {error}
+          </span>
+        )}
       </div>
 
       <input
         className={`input ${error ? "error" : ""}`}
+        placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />
 
-      {error && <span className="error-text mobile">{error}</span>}
+      {error && (
+        <span className="error-text mobile">
+          {error}
+        </span>
+      )}
     </div>
   )
 }
 
-function Textarea({ label, value, onChange, error }: InputProps) {
+function Textarea({
+  label,
+  placeholder,
+  value,
+  onChange,
+  error,
+}: InputProps) {
   return (
     <div className="field">
       <div className="field-header">
         <label>{label}</label>
-        {error && <span className="error-text desktop">{error}</span>}
+
+        {error && (
+          <span className="error-text desktop">
+            {error}
+          </span>
+        )}
       </div>
 
       <textarea
         className={`input textarea ${error ? "error" : ""}`}
+        placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />
 
-      {error && <span className="error-text mobile">{error}</span>}
+      {error && (
+        <span className="error-text mobile">
+          {error}
+        </span>
+      )}
     </div>
   )
 }

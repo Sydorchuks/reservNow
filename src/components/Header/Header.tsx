@@ -28,8 +28,9 @@ export default function Header() {
         <div className="header-actions">
             <div ref={langRef} className={`lang ${open ? "open" : ""}`}>
             <div className="lang-selected" onClick={() => setOpen(!open)}>
-                {currentLang.toUpperCase()}
-
+                <span className="lang-value">
+                  {currentLang.toUpperCase()}
+                </span>
                 <span className="arrow-circle">
                 <span className={`arrow ${open ? "open" : ""}`}></span>
                 </span>

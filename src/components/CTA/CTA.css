@@ -1,105 +1,445 @@
 .cta {
   position: relative;
   width: 100%;
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 285px;
+  background: #F4F1FF;
   overflow: hidden;
-  margin: 0;
-}
-
-.cta-bg {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 120%;
-  height: 100%;
-  transform: translateX(-50%);
-  background-image: url("/CTA-bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .cta-container {
   position: relative;
+  width: 1920px;
+  height: 285px;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+.cta-left-solid,
+.cta-left-fade,
+.cta-right-solid,
+.cta-right-fade {
+  position: absolute;
+  width: 368.07px;
+  height: 337.19px;
+  background: #E6DEFF;
+  border-radius: 24.6739px;
+}
+
+.cta-left-solid {
+  left: -255px;
+  top: -25px;
+  transform:
+    rotate(40deg)
+    skewX(-6deg);
+  z-index: 2;
+}
+
+.cta-left-fade {
+  left: -184px;
+  top: -25px;
+  opacity: 0.4;
+  transform:
+    rotate(40deg)
+    skewX(-6deg);
   z-index: 1;
-  max-width: 900px;
-  width: 100%;
+}
+
+.cta-right-solid {
+  right: -255px;
+  top: -25px;
+  transform:
+    rotate(-40deg)
+    skewX(6deg);
+  z-index: 2;
+}
+
+.cta-right-fade {
+  right: -184px;
+  top: -25px;
+  opacity: 0.4;
+  transform:
+    rotate(-40deg)
+    skewX(6deg);
+  z-index: 1;
+}
+
+.cta-content {
+  position: absolute;
+  width: 876px;
+  left: 50%;
+  top: 56px;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
 }
 
 .cta-title {
-  font-size: 32px;
+  width: 876px;
+  margin: 20px 0 20px 0;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
   font-weight: 600;
-  line-height: 1.4;
-  color: #3b2f6b;
-  max-width: 800px;
+  font-size: 30px;
+  line-height: 138.7%;
+  text-align: center;
+  letter-spacing: 0.3px;
+  color: #2D1D61;
 }
 
 .cta-btn {
-  margin-bottom: 30px;
-  height: 60px;
-  padding: 0 28px;
-  border-radius: 10px;
+  width: 270px;
+  height: 50px;
   border: none;
-  font-size: 20px;
+  border-radius: 14px;
+  background: #7961DB;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 13.5px 24.5px;
+  margin-top: 0;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
   font-weight: 500;
-  background: linear-gradient(135deg, #7961DB, #6a5ae0);
-  color: #fff;
+  font-size: 18.72px;
+  line-height: 100%;
+  color: #FFFFFF;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  z-index: 5;
 }
 
 .cta-btn:hover {
-  opacity: 0.9;
+  opacity: 0.92;
+  transform: translateY(-1px);
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1921px) {
   .cta {
-    height: 220px;
+    height: clamp(285px, 15vw, 420px);
   }
 
-  .cta-bg {
-    width: 140%;
+  .cta-container {
+    width: 100%;
+    max-width: 2560px;
+    height: 100%;
+  }
+
+  .cta-left-solid,
+  .cta-left-fade,
+  .cta-right-solid,
+  .cta-right-fade {
+    width: clamp(368px, 22vw, 520px);
+    height: clamp(337px, 20vw, 480px);
+  }
+
+  .cta-left-solid {
+    left: clamp(-255px, -10vw, -180px);
+    top: clamp(-25px, 1vw, 20px);
+  }
+
+  .cta-left-fade {
+    left: clamp(-184px, -7vw, -120px);
+    top: clamp(-25px, 1vw, 20px);
+  }
+
+  .cta-right-solid {
+    right: clamp(-255px, -10vw, -180px);
+    top: clamp(-25px, 1vw, 20px);
+  }
+
+  .cta-right-fade {
+    right: clamp(-184px, -7vw, -120px);
+    top: clamp(-25px, 1vw, 20px);
+  }
+
+  .cta-content {
+    width: clamp(876px, 52vw, 1200px);
+    top: clamp(56px, 3.2vw, 90px);
   }
 
   .cta-title {
+    width: 100%;
+    margin: 0 0 clamp(18px, 1vw, 24px) 0;
+    font-size: clamp(30px, 1.9vw, 44px);
+    line-height: 138.7%;
+  }
+
+  .cta-btn {
+    width: clamp(270px, 16vw, 360px);
+    height: clamp(50px, 3vw, 72px);
+    border-radius: clamp(14px, 1vw, 20px);
+    font-size: clamp(18px, 1vw, 24px);
+    padding:
+      clamp(13px, 0.8vw, 18px)
+      clamp(24px, 1.4vw, 34px);
+  }
+}
+
+@media (max-width: 1919px) and (min-width: 1600px) {
+  .cta-container {
+    width: 1600px;
+  }
+  .cta-content {
+    width: 820px;
+    top: 54px;
+  }
+
+  .cta-title {
+    width: 820px;
+    font-size: 28px;
+  }
+
+  .cta-left-solid {
+    left: -245px;
+  }
+
+  .cta-left-fade {
+    left: -175px;
+  }
+
+  .cta-right-solid {
+    right: -245px;
+  }
+
+  .cta-right-fade {
+    right: -175px;
+  }
+}
+
+@media (max-width: 1599px) and (min-width: 1281px) {
+  .cta {
+    height: 270px;
+  }
+
+  .cta-container {
+    width: 1280px;
+    height: 270px;
+  }
+
+  .cta-content {
+    width: 720px;
+    top: 48px;
+  }
+
+  .cta-title {
+    width: 720px;
+    margin: 20px 0 20px 0;
     font-size: 26px;
-    max-width: 650px;
+    line-height: 135%;
   }
 
   .cta-btn {
-    height: 40px;
-    font-size: 13px;
+    width: 250px;
+    height: 48px;
+    font-size: 17px;
+  }
+
+  .cta-left-solid,
+  .cta-left-fade,
+  .cta-right-solid,
+  .cta-right-fade {
+    width: 340px;
+    height: 310px;
+  }
+
+  .cta-left-solid {
+    left: -255px;
+    top: 5px;
+  }
+
+  .cta-left-fade {
+    left: -190px;
+    top: 5px;
+  }
+
+  .cta-right-solid {
+    right: -255px;
+    top: 5px;
+  }
+
+  .cta-right-fade {
+    right: -190px;
+    top: 5px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) and (min-width: 1025px) {
   .cta {
-    height: 200px;
+    height: 250px;
   }
 
-  .cta-bg {
-    width: 160%;
+  .cta-container {
+    width: 1024px;
+    height: 250px;
+  }
+
+  .cta-content {
+    width: 680px;
+    top: 42px;
   }
 
   .cta-title {
-    font-size: 22px;
-    max-width: 550px;
+    width: 680px;
+    margin: 20px 0 20px 0;
+    font-size: 24px;
+    line-height: 132%;
   }
 
   .cta-btn {
-    height: 36px;
-    font-size: 12px;
+    width: 235px;
+    height: 46px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  .cta-left-solid,
+  .cta-left-fade,
+  .cta-right-solid,
+  .cta-right-fade {
+    width: 300px;
+    height: 280px;
+  }
+
+  .cta-left-solid {
+    left: -240px;
+    top: 25px;
+  }
+
+  .cta-left-fade {
+    left: -185px;
+    top: 25px;
+  }
+
+  .cta-right-solid {
+    right: -240px;
+    top: 25px;
+  }
+
+  .cta-right-fade {
+    right: -185px;
+    top: 25px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1024px) and (min-width: 860px) {
+  .cta {
+    width: 100%;
+    height: 285px;
+    overflow: hidden;
+  }
+
+  .cta-container {
+    position: relative;
+    width: 1024px;
+    height: 285px;
+    margin: 0 auto;
+  }
+
+  .cta-left-solid,
+  .cta-left-fade,
+  .cta-right-solid,
+  .cta-right-fade {
+    position: absolute;
+    width: 344.48px;
+    height: 315.57px;
+    background: #E6DEFF;
+    border-radius: 13.1594px;
+  }
+
+  .cta-left-solid {
+    left: -273px;
+    top: 45px;
+    transform:
+      rotate(-40deg)
+      skewX(-6deg);
+    z-index: 2;
+  }
+
+  .cta-left-fade {
+    left: -213px;
+    top: 45px;
+    opacity: 0.4;
+    transform:
+      rotate(-40deg)
+      skewX(-6deg);
+    z-index: 1;
+  }
+
+  .cta-right-solid {
+    right: -273px;
+    top: 45px;
+    transform:
+      rotate(40deg)
+      skewX(6deg);
+    z-index: 2;
+  }
+
+  .cta-right-fade {
+    right: -213px;
+    top: 45px;
+    opacity: 0.4;
+    transform:
+      rotate(40deg)
+      skewX(6deg);
+    z-index: 1;
+  }
+
+  .cta-content {
+    position: absolute;
+    width: 760px;
+    left: 50%;
+    top: 58px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-title {
+    width: 760px;
+    margin: 0 0 18px 0;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 138.7%;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #2D1D61;
+  }
+
+  .cta-btn {
+    width: 260px;
+    height: 50px;
+    border: 1.1697px solid #7961DB;
+    border-radius: 9.35758px;
+    background: #7961DB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11.697px 16.3758px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18.7152px;
+    line-height: 23px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .cta-btn:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 860px) {
   .cta {
     display: none;
   }

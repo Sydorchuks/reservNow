@@ -34,6 +34,12 @@
       "message": "Message*",
       "submit": "Send"
     },
+    "placeholders": {
+      "name": "Enter your name",
+      "email": "Enter your email",
+      "phone": "Enter your phone number",
+      "message": "Enter description"
+    },
     "errors": {
       "nameRequired": "Enter your name",
       "emailRequired": "Enter email",

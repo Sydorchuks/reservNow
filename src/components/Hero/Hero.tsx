@@ -22,23 +22,22 @@ export default function Hero() {
 
           <div className="hero-actions">
             <button className="hero-btn primary">
-              {t("Contact")}
+              {t("buttons.contact")}
             </button>
 
             <button className="hero-btn secondary">
               <span className="play-icon">
                 <span className="triangle"></span>
               </span>
-              How ReservNow works
+              {t("buttons.howItWorks")}
             </button>
           </div>
         </div>
 
         <div className="hero-visual">
           <div className="hero-bg" />
-
           <img
-            src={isUA ? "/UA_stat.png" : "/EN_stat.png"}
+            src={isUA ? "/ua-stat.svg" : "/en-stat.svg"}
             className="hero-main"
             alt="Dashboard"
           />

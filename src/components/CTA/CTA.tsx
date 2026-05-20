@@ -6,16 +6,25 @@ export default function CTA() {
 
   return (
     <section className="cta">
-      <div className="cta-bg"></div>
+
+      <div className="cta-left-fade"></div>
+      <div className="cta-left-solid"></div>
+
+      <div className="cta-right-fade"></div>
+      <div className="cta-right-solid"></div>
 
       <div className="cta-container">
-        <h2 className="cta-title">
-          {t("cta.title")}
-        </h2>
+        <div className="cta-content">
 
-        <button className="cta-btn">
-          {t("cta.button")}
-        </button>
+          <h2 className="cta-title">
+            {t("cta.title")}
+          </h2>
+
+          <button className="cta-btn">
+            {t("cta.button")}
+          </button>
+
+        </div>
       </div>
     </section>
   )
